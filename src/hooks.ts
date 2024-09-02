@@ -4,7 +4,7 @@ import { useLayoutEffect } from "react";
 
 export function updateTheme(theme: string) {
   console.log('??? updateTheme', theme);
-  document.body.setAttribute('data-theme', theme.toLowerCase());
+  document.body.setAttribute('theme-mode', theme.toLowerCase());
 }
 
 /** 跟随主题色变化 */
