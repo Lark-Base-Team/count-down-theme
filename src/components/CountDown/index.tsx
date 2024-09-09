@@ -122,7 +122,6 @@ export default function CountDown() {
     }
   }
 
-
   const [themeConfig, setThemeConfig] = useState<IDashboardTheme>({} as IDashboardTheme);
 
   useEffect(() => {
@@ -146,11 +145,11 @@ export default function CountDown() {
   useConfig(updateConfig)
 
   return (
-    <main style={{ background: themeConfig?.chartBgColor }} className={classnames({
+    <main style={{ background: 'transparent' }} className={classnames({
       'main-config': isConfig,
       'main': true,
     })}>
-      <div className='content'>
+      <div className='content' style={{ background: themeConfig?.chartBgColor }}>
         <CountdownView
           t={t}
           availableUnits={availableUnits}
@@ -213,7 +212,6 @@ function CountdownView({ config, isConfig, availableUnits, t }: ICountdownView) 
 
   return (
     <div style={{ width: '100vw', textAlign: 'center', overflow: 'hidden' }}>
-
       {config.showTitle ? <p style={{ color }} className={classnames('count-down-title', {
         'count-down-title-config': isConfig
       })}>
